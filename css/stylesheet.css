@@ -209,9 +209,19 @@ header ul {
 }
 
 
-/* .Imagen-BloqueDos {
-    width: 50%;
-} */
+.Imagen-BloqueDos img {
+    -webkit-filter: blur(3px);
+    filter: blur(8px);
+    -webkit-transition: .3s ease-in-out;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+
+
+.Imagen-BloqueDos img:hover {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}  
 
 .Texto-BloqueDos {
     display: block;
@@ -226,8 +236,22 @@ header ul {
     grid-area: films;
     display: flex;
     flex-direction: column;
-    background-color: rgb(236, 223, 213);
+    background: linear-gradient(-55deg, #f7dcd4, #8dbea5, #f5b46a, #c1b5d7);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
     padding: 10%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .Section3texto{
@@ -246,6 +270,17 @@ header ul {
 
 }
 
+.Filmes img{
+    transition: .4s ease-in-out;
+    cursor:pointer;
+}
+
+.Filmes img:hover{
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: translateY(-10%);
+    /* transition-timing-function: var(--bounce-out); */
+  }
+
 .Imagen-fixed {
     position: fixed;
     width: 100px;
@@ -254,9 +289,9 @@ header ul {
     background: url("../Images/Lynch-fixed-home.png");
     background-position: center;
     background-size: cover;
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+    -webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 2s linear infinite;
     right: 3%;
     bottom: 3%;
     cursor:pointer;
@@ -484,6 +519,13 @@ footer {
     margin: 0 auto;
     background-size:cover;
     background-position: center center;
+    transition: transform .9s;
+    cursor: pointer;
+}
+
+.BioCabeza-img:hover{
+    transform: scale(1.12); 
+    filter: hue-rotate(235deg);
 }
         @media screen and (max-width: 767px){
             .BioCabeza-img{
@@ -511,7 +553,21 @@ footer {
     justify-content: center;
     padding: 2% 0;
     overflow: hidden;
+    cursor: pointer;
 }
+
+.BioImageGllery img{
+    transition: transform .9s;
+}
+
+.BioImageGllery img:hover{
+    -ms-transform: scale(.9); /* IE 9 */
+    -webkit-transform: scale(.9); /* Safari 3-8 */
+    transform: scale(.9); 
+    filter: invert(100%);
+    
+}
+
 
     @media screen and (max-width: 767px){
         .BioImageGllery {
